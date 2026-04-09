@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('wDo9IETFi39wPMMiW');</script>
 </head>
 <body>
 
@@ -15,6 +16,16 @@
   <div id="loader">
     <div class="loader-text">LOADING<span class="dots">...</span></div>
   </div>
+  <script>
+    setTimeout(function() {
+      var loader = document.getElementById('loader');
+      if (loader) {
+        loader.style.transition = 'opacity 0.5s ease';
+        loader.style.opacity = '0';
+        setTimeout(function() { loader.style.display = 'none'; }, 500);
+      }
+    }, 2000);
+  </script>
 
   <!-- ======= CURSOR ======= -->
   <div class="cursor"></div>
@@ -22,20 +33,13 @@
 
   <!-- ======= NAV ======= -->
   <nav id="navbar">
-    <!--
-      NAV LOGO — to use your own logo image:
-      1. Put your logo file in the same folder as index.html  e.g. "logo.png"
-      2. Change src="" below to src="logo.png"
-      3. The text "TT." will hide automatically once the image loads.
-      Example: <img id="logoImg" src="logo.png" alt="Logo" class="logo-img" />
-    -->
- <div class="nav-logo" id="navLogo">
-  <img id="logoImg" src="" alt="Logo" class="logo-img"
-       onerror="this.style.display='none';document.getElementById('logoText').style.display='inline';"
-       onload="this.style.display='inline';document.getElementById('logoText').style.display='none';"
-       style="display:none;" />
-  <span id="logoText">TT<span class="accent">.</span></span>
-</div>
+    <div class="nav-logo" id="navLogo">
+      <img id="logoImg" src="" alt="Logo" class="logo-img"
+           onerror="this.style.display='none';document.getElementById('logoText').style.display='inline';"
+           onload="this.style.display='inline';document.getElementById('logoText').style.display='none';"
+           style="display:none;" />
+      <span id="logoText">TT<span class="accent">.</span></span>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -43,6 +47,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -65,9 +70,9 @@
       </div>
     </div>
     <div class="hero-image-wrapper">
-     
       <div class="hero-img-placeholder">
-        <img src="images/profile.jpeg" alt="Tharun Teja" class="hero-img" onerror="this.parentElement.classList.add('images/THARUNDP.jpeg')"/>
+        <img src="images/profile.jpeg" alt="Tharun Teja" class="hero-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="img-fallback"><i class="fa-solid fa-user"></i></div>
       </div>
       <div class="hero-img-ring"></div>
@@ -83,7 +88,7 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Hey! I'm <strong> Tejavath Tharun Teja </strong>,B.Tech Computer Science student at <strong>IIIT Kottayam</strong> (Batch 2025–2029). I've always been curious about how things work — especially technology.</p>
+        <p>Hey! I'm <strong>Tejavath Tharun Teja</strong>, B.Tech Computer Science student at <strong>IIIT Kottayam</strong> (Batch 2025–2029). I've always been curious about how things work — especially technology.</p>
         <p>I enjoy writing code, exploring new tools, and turning ideas into reality. I'm currently focused on building a strong foundation in CS fundamentals, working on personal projects, and looking for opportunities to learn and grow.</p>
         <p>Always up for interesting conversations, collaborations, or just geeking out about tech!</p>
         <div class="about-links">
@@ -91,23 +96,15 @@
             <i class="fa-brands fa-linkedin-in"></i>
             <span>LinkedIn</span>
           </a>
-          <!--
-            === YOUR LINKEDIN ===
-            Replace YOUR_LINKEDIN_USERNAME with your actual LinkedIn username.
-            Example: https://www.linkedin.com/in/tharunteja
-          -->
           <a href="https://github.com/tejavaththarunteja" target="_blank" class="social-link github">
             <i class="fa-brands fa-github"></i>
             <span>GitHub</span>
           </a>
+          <!-- FIX: proper mailto link -->
           <a href="mailto:tejavaththarunteja@gmail.com" class="social-link email">
             <i class="fa-solid fa-envelope"></i>
             <span>Email Me</span>
           </a>
-          <!--
-            === YOUR EMAIL ===
-            Replace YOUR_EMAIL@gmail.com with your actual email address.
-          -->
         </div>
       </div>
       <div class="about-stats">
@@ -142,10 +139,10 @@
       <div class="skill-category">
         <h3><i class="fa-solid fa-code"></i> Languages</h3>
         <div class="skill-tags">
-          <span class="tag">Python(Basics)</span>
-          <span class="tag">C(Basics)</span>
-          <span class="tag">Java(Basics)</span>
-          <span class="tag">JavaScript(Basics)</span>
+          <span class="tag">Python (Basics)</span>
+          <span class="tag">C (Basics)</span>
+          <span class="tag">Java (Basics)</span>
+          <span class="tag">JavaScript (Basics)</span>
         </div>
       </div>
 
@@ -192,7 +189,7 @@
           <div class="timeline-year">2025 – 2029</div>
           <h3>B.Tech in Computer Science & Engineering</h3>
           <p class="institution">Indian Institute of Information Technology (IIIT), Kottayam, Kerala</p>
-          <p class="timeline-desc"> Focusing on core CS fundamentals, programming, and building projects to apply what I learn.</p>
+          <p class="timeline-desc">Focusing on core CS fundamentals, programming, and building projects to apply what I learn.</p>
           <span class="badge current">Currently Enrolled</span>
         </div>
       </div>
@@ -201,7 +198,7 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-year">2023 – 2025</div>
-          <h3>Telangana Board of Intermediate Education(MPC)</h3>
+          <h3>Telangana Board of Intermediate Education (MPC)</h3>
           <p class="institution">Narayana Junior College, Telangana</p>
           <p class="timeline-desc">Completed intermediate education with Mathematics, Physics, and Chemistry as core subjects.</p>
         </div>
@@ -220,14 +217,108 @@
     </div>
   </section>
 
+  <!-- ======= PROJECTS ======= -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- ── PROJECT CARD 1 ── Uncomment and fill in when ready ──
+      <div class="project-card featured">
+        <div class="project-img-wrapper">
+          <img src="" alt="Project Name" class="project-img"
+               onerror="this.style.display='none'" />
+          <div class="project-img-fallback">
+            <i class="fa-solid fa-terminal"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+            <a href="#" target="_blank" class="project-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <h3>Project Name Here</h3>
+          <p>Short description of what this project does and what you learned building it.</p>
+        </div>
+      </div>
+      ── END CARD 1 ── -->
+
+      <!-- ── PROJECT CARD 2 ── Uncomment and fill in when ready ──
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="" alt="Project Name" class="project-img"
+               onerror="this.style.display='none'" />
+          <div class="project-img-fallback">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+            <a href="#" target="_blank" class="project-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Tag2</span>
+          </div>
+          <h3>Project Name Here</h3>
+          <p>Short description of what this project does and what you learned building it.</p>
+        </div>
+      </div>
+      ── END CARD 2 ── -->
+
+      <!-- ── PROJECT CARD 3 ── Uncomment and fill in when ready ──
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <img src="" alt="Project Name" class="project-img"
+               onerror="this.style.display='none'" />
+          <div class="project-img-fallback">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="project-overlay">
+            <a href="#" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>Java</span>
+            <span>Tag2</span>
+          </div>
+          <h3>Project Name Here</h3>
+          <p>Short description of what this project does and what you learned building it.</p>
+        </div>
+      </div>
+      ── END CARD 3 ── -->
+
+    </div>
+    <p class="projects-note">🚀 Projects will be uploaded soon — stay tuned!</p>
+  </section>
+
   <!-- ======= CERTIFICATIONS ======= -->
   <section id="certifications">
     <div class="section-header">
-      <span class="section-number">04</span>
+      <span class="section-number">05</span>
       <h2>Certifications</h2>
     </div>
     <div class="certs-grid">
-      <!-- CERT 1 — Fill in your details -->
+
       <div class="cert-card">
         <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
         <div class="cert-info">
@@ -238,7 +329,6 @@
         <a href="images/Sololearnhtml.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
-      <!-- CERT 2 — Fill in your details -->
       <div class="cert-card">
         <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
         <div class="cert-info">
@@ -249,23 +339,21 @@
         <a href="images/Sololearnjava.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
-      <!-- CERT 3 — Fill in your details -->
       <div class="cert-card">
         <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
         <div class="cert-info">
-          <h3>Data analyst job simulation</h3>
-          <p class="cert-issuer">Dellooite</p>
+          <h3>Data Analyst Job Simulation</h3>
+          <p class="cert-issuer">Deloitte</p>
           <p class="cert-year">2026</p>
         </div>
         <a href="images/Delloitte1.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
-      <!-- CERT 4 — Fill in your details -->
       <div class="cert-card">
         <div class="cert-icon"><i class="fa-solid fa-star"></i></div>
         <div class="cert-info">
-          <h3>Cyber job simulation</h3>
-          <p class="cert-issuer">Dellooite</p>
+          <h3>Cyber Job Simulation</h3>
+          <p class="cert-issuer">Deloitte</p>
           <p class="cert-year">2026</p>
         </div>
         <a href="images/Delloitte2.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -283,18 +371,6 @@
       </div>
       -->
 
-      <!-- CERT 6 — Uncomment when ready
-      <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="cert-info">
-          <h3>Certification Name</h3>
-          <p class="cert-issuer">Issuer Name</p>
-          <p class="cert-year">Year</p>
-        </div>
-        <a href="https://example.com/verify/YOUR_CERT_ID" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-      -->
-
     </div>
     <p class="certs-note">📚 More certifications being added as I complete courses.</p>
   </section>
@@ -302,15 +378,15 @@
   <!-- ======= CONTACT ======= -->
   <section id="contact">
     <div class="section-header">
-      <span class="section-number">05</span>
+      <span class="section-number">06</span>
       <h2>Get in Touch</h2>
     </div>
     <div class="contact-wrapper">
       <div class="contact-text">
         <p>I'm always open to connecting — whether it's about internships, collaborations, projects, or just a friendly chat about tech. Feel free to reach out!</p>
         <div class="contact-methods">
+          <!-- FIX: proper mailto link -->
           <a href="mailto:tejavaththarunteja@gmail.com" class="contact-method">
-            <!-- Replace YOUR_EMAIL@gmail.com with your actual email -->
             <i class="fa-solid fa-envelope"></i>
             <span>tejavaththarunteja@gmail.com</span>
           </a>
@@ -319,12 +395,12 @@
             <span>github.com/tejavaththarunteja</span>
           </a>
           <a href="https://www.linkedin.com/in/tejavaththarunteja" target="_blank" class="contact-method">
-            <!-- Replace YOUR_LINKEDIN_USERNAME with your actual LinkedIn username -->
             <i class="fa-brands fa-linkedin-in"></i>
             <span>linkedin.com/in/tejavaththarunteja</span>
           </a>
         </div>
       </div>
+      <!-- FIX: form submit works now with type="submit" on button -->
       <form class="contact-form" id="contactForm">
         <div class="form-group">
           <label for="name">Name</label>
@@ -338,7 +414,8 @@
           <label for="message">Message</label>
           <textarea id="message" rows="5" placeholder="Say hello..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        <!-- FIX: changed type="button" to type="submit" -->
+        <button type="submit" class="btn btn-primary" id="sendBtn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
         <p class="form-note" id="formNote"></p>
       </form>
     </div>
@@ -346,10 +423,10 @@
 
   <!-- ======= FOOTER ======= -->
   <footer>
-    <p> <span class="accent">TejavathTharun Teja</span></p>
-    <p class="footer-sub">IIIT Kottayam · Batch 2025–2029 · B.Tech CSE</p>
+    <p><strong>Tejavath Tharun Teja</strong> &copy; <span class="footer-year"></span></p>
   </footer>
 
+  <!-- FIX: script tag added -->
   <script src="script.js"></script>
 </body>
 </html>

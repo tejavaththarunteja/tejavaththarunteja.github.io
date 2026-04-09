@@ -36,6 +36,11 @@ body {
   color: var(--text);
   font-family: var(--font-mono);
   overflow-x: hidden;
+  cursor: auto;
+}
+
+/* Only hide default cursor when custom cursor JS is active */
+body.custom-cursor-active {
   cursor: none;
 }
 
@@ -68,6 +73,7 @@ input, textarea, button { font-family: var(--font-mono); }
 #loader.hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .loader-text {
