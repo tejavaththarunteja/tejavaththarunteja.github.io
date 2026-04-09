@@ -1001,3 +1001,123 @@ footer {
   .hero-img-placeholder { width: 220px; height: 220px; }
   .section-header h2 { font-size: 1.6rem; }
 }
+/* ===========================
+   PROJECTS — COMING SOON STATE
+   Add this to the bottom of style.css
+=========================== */
+
+.projects-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.projects-empty-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 480px;
+}
+
+.projects-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.projects-empty-inner h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.projects-empty-inner p {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Ghost / skeleton cards */
+.projects-ghost {
+  width: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.ghost-card {
+  cursor: default !important;
+}
+
+.ghost-card:hover {
+  transform: none !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+.ghost-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-card) 50%, var(--bg-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.ghost-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.ghost-tag {
+  height: 20px;
+  width: 60px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-card) 50%, var(--bg-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.ghost-title {
+  height: 18px;
+  width: 75%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-card) 50%, var(--bg-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.ghost-line {
+  height: 12px;
+  width: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-card) 50%, var(--bg-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.ghost-line.short {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
