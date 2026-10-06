@@ -442,6 +442,8 @@ section {
 .social-link:hover { color: var(--text); border-color: var(--accent); }
 .social-link.linkedin:hover { color: #0a66c2; border-color: #0a66c2; }
 .social-link.github:hover { color: #fff; border-color: #fff; }
+.social-link.leetcode:hover { color: #ffa116; border-color: #ffa116; }
+.social-link.kaggle:hover { color: #20beff; border-color: #20beff; }
 .social-link.email:hover { color: var(--accent); border-color: var(--accent); }
 
 .about-stats {
