@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>emailjs.init('wDo9IETFi39wPMMiW');</script>
 </head>
 <body>
 
@@ -16,16 +14,6 @@
   <div id="loader">
     <div class="loader-text">LOADING<span class="dots">...</span></div>
   </div>
-  <script>
-    setTimeout(function() {
-      var loader = document.getElementById('loader');
-      if (loader) {
-        loader.style.transition = 'opacity 0.5s ease';
-        loader.style.opacity = '0';
-        setTimeout(function() { loader.style.display = 'none'; }, 500);
-      }
-    }, 2000);
-  </script>
 
   <!-- ======= CURSOR ======= -->
   <div class="cursor"></div>
@@ -33,13 +21,7 @@
 
   <!-- ======= NAV ======= -->
   <nav id="navbar">
-    <div class="nav-logo" id="navLogo">
-      <img id="logoImg" src="" alt="Logo" class="logo-img"
-           onerror="this.style.display='none';document.getElementById('logoText').style.display='inline';"
-           onload="this.style.display='inline';document.getElementById('logoText').style.display='none';"
-           style="display:none;" />
-      <span id="logoText">TT<span class="accent">.</span></span>
-    </div>
+    <div class="nav-logo">TT<span class="accent">.</span></div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -59,20 +41,23 @@
     <div class="hero-content">
       <p class="hero-tag">// Hello! 👋</p>
       <h1 class="hero-title">
-        I'm <span class="accent"><br>
-          𝚃𝚎𝚓𝚊𝚟𝚊𝚝𝚑 𝚃𝚑𝚊𝚛𝚞𝚗 𝚃𝚎𝚓𝚊</span>
+        I'm <span class="accent">Tejavath Tharun Teja</span>
       </h1>
       <p class="hero-subtitle">Computer Science Undergrad @ IIIT Kottayam</p>
-      <p class="hero-desc">Building the future, one line of code at a time. First-year B.Tech student passionate about tech, problem-solving, and learning everything I can.</p>
+      <p class="hero-desc">Building the future, one line of code at a time. B.Tech student passionate about tech, problem-solving, and learning everything I can.</p>
       <div class="hero-btns">
-        <a href="#about" class="btn btn-primary">About Me</a>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
+      <p class="first-project-note">⚡ This portfolio is my very first web project!</p>
     </div>
     <div class="hero-image-wrapper">
       <div class="hero-img-placeholder">
-        <img src="images/profile.jpeg" alt="Tharun Teja" class="hero-img"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <!--
+          Profile photo — already hosted on your Netlify site.
+          If keeping local: place profile.jpeg inside an images/ folder.
+        -->
+        <img src="images/profile.jpeg" alt="Tejavath Tharun Teja" class="hero-img" onerror="this.parentElement.classList.add('no-img')"/>
         <div class="img-fallback"><i class="fa-solid fa-user"></i></div>
       </div>
       <div class="hero-img-ring"></div>
@@ -88,7 +73,7 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Hey! I'm <strong>Tejavath Tharun Teja</strong>, B.Tech Computer Science student at <strong>IIIT Kottayam</strong> (Batch 2025–2029). I've always been curious about how things work — especially technology.</p>
+        <p>Hey! I'm <strong>Tejavath Tharun Teja</strong>, a B.Tech Computer Science student at <strong>IIIT Kottayam</strong> (Batch 2025–2029). I've always been curious about how things work — especially technology.</p>
         <p>I enjoy writing code, exploring new tools, and turning ideas into reality. I'm currently focused on building a strong foundation in CS fundamentals, working on personal projects, and looking for opportunities to learn and grow.</p>
         <p>Always up for interesting conversations, collaborations, or just geeking out about tech!</p>
         <div class="about-links">
@@ -116,12 +101,12 @@
           <span class="stat-label">Languages Known</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">∞</span>
-          <span class="stat-label">Things to Learn</span>
-        </div>
-        <div class="stat-card">
           <span class="stat-num">4+</span>
           <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Things to Learn</span>
         </div>
       </div>
     </div>
@@ -134,38 +119,45 @@
       <h2>Skills</h2>
     </div>
     <div class="skills-grid">
+
       <div class="skill-category">
         <h3><i class="fa-solid fa-code"></i> Languages</h3>
         <div class="skill-tags">
-          <span class="tag">Python (Basics)</span>
-          <span class="tag">C (Basics)</span>
-          <span class="tag">Java (Basics)</span>
-          <span class="tag">JavaScript (Basics)</span>
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
         </div>
       </div>
+
       <div class="skill-category">
         <h3><i class="fa-solid fa-globe"></i> Web</h3>
         <div class="skill-tags">
           <span class="tag">HTML5</span>
-          <span class="tag">CSS</span>
+          <span class="tag">CSS3</span>
           <span class="tag">JavaScript</span>
         </div>
       </div>
+
       <div class="skill-category">
         <h3><i class="fa-solid fa-tools"></i> Tools</h3>
         <div class="skill-tags">
           <span class="tag">GitHub</span>
           <span class="tag">VS Code</span>
+          <span class="tag">MS Excel</span>
         </div>
       </div>
+
       <div class="skill-category">
         <h3><i class="fa-solid fa-brain"></i> Currently Learning</h3>
         <div class="skill-tags">
           <span class="tag learning">Data Structures</span>
-          <span class="tag learning">MS Excel</span>
-          <span class="tag learning">React/Angular</span>
+          <span class="tag learning">Algorithms</span>
+          <span class="tag learning">React</span>
+          <span class="tag learning">Angular</span>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -176,6 +168,7 @@
       <h2>Education</h2>
     </div>
     <div class="timeline">
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
@@ -186,6 +179,7 @@
           <span class="badge current">Currently Enrolled</span>
         </div>
       </div>
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
@@ -195,15 +189,17 @@
           <p class="timeline-desc">Completed intermediate education with Mathematics, Physics, and Chemistry as core subjects.</p>
         </div>
       </div>
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-year">2013 – 2023</div>
-          <h3>Central Board of Secondary School</h3>
+          <h3>Central Board of Secondary School (Class X)</h3>
           <p class="institution">Kendriya Vidyalaya No.2, Uppal, Hyderabad</p>
           <p class="timeline-desc">Completed school education at KV No.2 Uppal, Hyderabad. Developed a strong foundation in science and mathematics.</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -213,148 +209,91 @@
       <span class="section-number">04</span>
       <h2>Projects</h2>
     </div>
-
-    <!--
-    ================================================================
-    HOW TO ADD A PROJECT WHEN YOU'RE READY:
-    ================================================================
-    STEP 1 → Delete the entire block marked "COMING SOON PLACEHOLDER"
-             (from the opening <div class="projects-empty"> to its closing </div>)
-
-    STEP 2 → Uncomment the <div class="projects-grid"> block at the bottom
-             of this section (remove the opening and closing comment tags)
-
-    STEP 3 → Fill in each card:
-       - PROJECT NAME    → replace "Project Name Here"
-       - DESCRIPTION     → replace the <p> text
-       - TECH TAGS       → edit the <span> tags inside .project-tags
-       - GITHUB LINK     → replace href="#" with your GitHub repo URL
-       - LIVE DEMO LINK  → replace href="#" with your live URL
-                           (delete the Live Demo <a> if there's no live demo)
-       - IMAGE           → replace src="" with e.g. src="images/project1.png"
-                           (leave src="" blank to show the icon placeholder)
-
-    STEP 4 → To add more projects, copy any <div class="project-card">
-             block and paste it inside the .projects-grid div.
-
-    TIP: The first card uses class "project-card featured" — keep that
-         for your best/most complex project.
-    ================================================================
-    -->
-
-    <!-- ======= COMING SOON PLACEHOLDER — DELETE THIS ENTIRE BLOCK WHEN ADDING REAL PROJECTS ======= -->
-    <div class="projects-empty">
-
-      <div class="projects-empty-inner">
-        <div class="projects-empty-icon">
-          <i class="fa-solid fa-code-branch"></i>
-        </div>
-        <h3>Projects Coming Soon</h3>
-        <p>I'm currently building some cool stuff.<br>Check back soon or follow my GitHub for updates!</p>
-        <a href="https://github.com/tejavaththarunteja" target="_blank" class="btn btn-outline">
-          <i class="fa-brands fa-github"></i> Follow on GitHub
-        </a>
-      </div>
-
-      <!-- Ghost / skeleton cards just to show the layout -->
-      <div class="projects-grid projects-ghost">
-        <div class="project-card ghost-card">
-          <div class="ghost-img"></div>
-          <div class="ghost-info">
-            <div class="ghost-tag"></div>
-            <div class="ghost-title"></div>
-            <div class="ghost-line"></div>
-            <div class="ghost-line short"></div>
-          </div>
-        </div>
-        <div class="project-card ghost-card">
-          <div class="ghost-img"></div>
-          <div class="ghost-info">
-            <div class="ghost-tag"></div>
-            <div class="ghost-title"></div>
-            <div class="ghost-line"></div>
-            <div class="ghost-line short"></div>
-          </div>
-        </div>
-        <div class="project-card ghost-card">
-          <div class="ghost-img"></div>
-          <div class="ghost-info">
-            <div class="ghost-tag"></div>
-            <div class="ghost-title"></div>
-            <div class="ghost-line"></div>
-            <div class="ghost-line short"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- ======= END COMING SOON PLACEHOLDER ======= -->
-
-
-    <!-- ================================================================
-         REAL PROJECT CARDS — uncomment this entire block when ready
-         (delete the opening and closing comment dashes below)
-    ================================================================
-
     <div class="projects-grid">
 
+      <!-- PROJECT 1: AI Emotion Detector (FEATURED) -->
       <div class="project-card featured">
         <div class="project-img-wrapper">
-          <img src="" alt="Project Name" class="project-img" onerror="this.style.display='none'" />
-          <div class="project-img-fallback"><i class="fa-solid fa-terminal"></i></div>
+          <!--
+            Add a screenshot: images/emotion-detector.png
+          -->
+          <div class="project-img-fallback"><i class="fa-solid fa-face-smile"></i></div>
           <div class="project-overlay">
-            <a href="#" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
-            <a href="#" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            <a href="https://github.com/tejavaththarunteja/AI-Based-emotion-detection-sysem" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>Python</span><span>CNN</span><span>OpenCV</span><span>TensorFlow</span><span>Deep Learning</span>
+          </div>
+          <h3>AI-Based Emotion Detection System <span class="featured-badge">🤖 AI / ML</span></h3>
+          <p>Developed a real-time AI-based emotion detection system using a Convolutional Neural Network (CNN). Trained on the FER-2013 facial expression dataset to classify seven emotions — Angry, Disgust, Fear, Happy, Neutral, Sad, and Surprise — live via webcam.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Strong Password Generator -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <!--
+            Add a screenshot: images/password-gen.png
+          -->
+          <div class="project-img-fallback"><i class="fa-solid fa-lock"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/tejavaththarunteja/Password-generator-using-python-" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>Python</span><span>Security</span><span>CLI</span>
+          </div>
+          <h3>Strong Password Generator</h3>
+          <p>A Python script that generates cryptographically strong, random passwords to help secure online accounts. Supports customisable length and character sets — uppercase, lowercase, digits, and symbols.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Python Alarm Clock -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <!--
+            Add a screenshot: images/alarm-clock.png
+          -->
+          <div class="project-img-fallback"><i class="fa-solid fa-clock"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/tejavaththarunteja/Python-Alarm-Clock" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span>Python</span><span>CLI</span><span>Automation</span>
+          </div>
+          <h3>Python Alarm Clock</h3>
+          <p>A command-line alarm clock built in Python that lets you set a specific time and plays a sound alert when triggered. A clean utility project demonstrating time handling and audio playback in Python.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: This Portfolio -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <!--
+            Add a screenshot: images/portfolio.png
+          -->
+          <div class="project-img-fallback"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/tejavaththarunteja" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://tejavaththarunteja.netlify.app" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
           </div>
         </div>
         <div class="project-info">
           <div class="project-tags">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
-          <h3>Project Name Here</h3>
-          <p>Short description of what this project does and what you learned building it.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <img src="" alt="Project Name" class="project-img" onerror="this.style.display='none'" />
-          <div class="project-img-fallback"><i class="fa-solid fa-code"></i></div>
-          <div class="project-overlay">
-            <a href="#" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
-            <a href="#" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>Python</span><span>Tag2</span>
-          </div>
-          <h3>Project Name Here</h3>
-          <p>Short description of what this project does and what you learned building it.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-img-wrapper">
-          <img src="" alt="Project Name" class="project-img" onerror="this.style.display='none'" />
-          <div class="project-img-fallback"><i class="fa-solid fa-laptop-code"></i></div>
-          <div class="project-overlay">
-            <a href="#" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>Java</span><span>Tag2</span>
-          </div>
-          <h3>Project Name Here</h3>
-          <p>Short description of what this project does and what you learned building it.</p>
+          <h3>Personal Portfolio Website <span class="first-badge">✨ First Web Project!</span></h3>
+          <p>My very first web development project — built from scratch with pure HTML, CSS and JavaScript. Features a custom cursor, scroll animations, typing effect, and responsive design. No frameworks, no templates — 100% handcrafted.</p>
         </div>
       </div>
 
     </div>
-
-    ================================================================ -->
-
+    <p class="projects-note">🚀 More projects coming as I keep building and learning!</p>
   </section>
 
   <!-- ======= CERTIFICATIONS ======= -->
@@ -364,8 +303,9 @@
       <h2>Certifications</h2>
     </div>
     <div class="certs-grid">
+
       <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
         <div class="cert-info">
           <h3>Introduction to HTML</h3>
           <p class="cert-issuer">Sololearn</p>
@@ -373,8 +313,9 @@
         </div>
         <a href="images/Sololearnhtml.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
+
       <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="cert-icon"><i class="fa-brands fa-java"></i></div>
         <div class="cert-info">
           <h3>Introduction to Java</h3>
           <p class="cert-issuer">Sololearn</p>
@@ -382,8 +323,9 @@
         </div>
         <a href="images/Sololearnjava.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
+
       <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+        <div class="cert-icon"><i class="fa-solid fa-chart-bar"></i></div>
         <div class="cert-info">
           <h3>Data Analyst Job Simulation</h3>
           <p class="cert-issuer">Deloitte</p>
@@ -391,8 +333,9 @@
         </div>
         <a href="images/Delloitte1.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
+
       <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div class="cert-info">
           <h3>Cyber Job Simulation</h3>
           <p class="cert-issuer">Deloitte</p>
@@ -400,18 +343,6 @@
         </div>
         <a href="images/Delloitte2.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
-
-      <!-- ADD A NEW CERT — copy this block and fill in your details:
-      <div class="cert-card">
-        <div class="cert-icon"><i class="fa-solid fa-trophy"></i></div>
-        <div class="cert-info">
-          <h3>Certification Name</h3>
-          <p class="cert-issuer">Issuer Name</p>
-          <p class="cert-year">Year</p>
-        </div>
-        <a href="images/yourcert.jpeg" target="_blank" class="cert-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-      -->
 
     </div>
     <p class="certs-note">📚 More certifications being added as I complete courses.</p>
@@ -454,7 +385,7 @@
           <label for="message">Message</label>
           <textarea id="message" rows="5" placeholder="Say hello..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" id="sendBtn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
         <p class="form-note" id="formNote"></p>
       </form>
     </div>
@@ -462,7 +393,8 @@
 
   <!-- ======= FOOTER ======= -->
   <footer>
-    <p><strong>Tejavath Tharun Teja</strong> &copy; <span class="footer-year"></span></p>
+    <p>Designed & Built by <span class="accent">Tejavath Tharun Teja</span> ✨</p>
+    <p class="footer-sub">IIIT Kottayam · Batch 2025–2029 · B.Tech CSE</p>
   </footer>
 
   <script src="script.js"></script>
